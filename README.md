@@ -1,37 +1,31 @@
-# 🌦️ Weather Widget
+# Weather Widget
 
-A simple, responsive weather widget that displays real-time weather data for any location. Built as a lightweight front-end project to demonstrate API integration, UI design, and clean JavaScript architecture.
+A macOS menu bar app for showing the weather on your lock screen. Built with SwiftUI and AppKit, using CoreLocation for your location and Open-Meteo for weather data.
 
----
+This is a work in progress and is macOS-only. The lock screen integration is experimental and uses private macOS window APIs.
 
-## 🚀 Features
+## What's included
 
-- 🌍 Search weather by city
-- 🌡️ Displays temperature, conditions, and location
-- ⛅ Dynamic weather icons
-- 📱 Responsive design for mobile and desktop
-- ⚡ Fast and lightweight
+- Current temperature, conditions, location, and daily highs and lows.
+- Standard, compact, circular, and detailed widget layouts.
+- Position controls and a widget preview from the menu bar.
+- A manual weather refresh button.
 
----
+Weather is based on your device's location. If location access is denied or fails, the app falls back to San Francisco. No weather API key is needed.
 
-## 🛠️ Tech Stack
+## Run locally
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- Weather API (e.g. OpenWeather / similar)
-
----
-
-## 📸 Preview
-
-![[Pasted image 20260502170135.png]]
-[Weather Widget Screenshot]
-
----
-
-## 🔧 Installation & Setup
+The Xcode project targets macOS 14 Sonoma or later. You'll need Xcode with the macOS SDK installed.
 
 1. Clone the repository:
-```bash
-git clone git@github.com:CharlieJBlack/Weather-Widget.git
+
+   ```bash
+   git clone https://github.com/CharlieJBlack/Weather-Widget.git
+   ```
+
+2. Open `Weather-Widget/LockScreenWeather.xcodeproj` in Xcode.
+3. Select the `LockScreenWeather` target and choose your development team under Signing & Capabilities.
+4. Choose My Mac as the run destination, then build and run.
+5. Allow location access when prompted to get weather for your area.
+
+The app runs in the menu bar, without a Dock icon. Click the weather icon to preview the widget, change its layout or position, refresh the weather, or quit.
